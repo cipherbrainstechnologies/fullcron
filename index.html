@@ -14,8 +14,8 @@
         .time_box,.status_box,.form-select{background: #262953;padding: 10px 30px;color: #fff;border-radius: 10px;font-size: 1.5rem;font-weight: 600;}
         span.status_round.status_active {width: 20px;height: 20px;display: inline-block;background: #00ff00;border-radius: 50%;margin: 3px  0 -3px 10px;}
         .info_box {background: #262953;padding: 30px;border-radius: 10px;color: #fff;}
-        h6.info_text {color: #06D0FF;font-weight: 600;}
-        h3.info_title {font-weight: 700;}
+        .info_text {color: #06D0FF;font-weight: 600;}
+        .info_title {font-weight: 700;}
         .canvas {margin-top: 50px;}
         select#exampleDropdown {appearance: none;background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23ffffff%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E");background-repeat: no-repeat;background-position: right 1rem center;background-size: 1em;}
         @media (max-width: 768px){.time_box span {display: block;margin: 5px 0;padding: 0;}}
@@ -54,56 +54,56 @@
             <div class="col-md-3 mb-4">
                 <div class="info_box">
                     <h3 class="info_title">Watt aktuell</h3>
-                    <h6 class="info_text" id="watt"></h6>
+                    <h4 class="info_text" id="watt"></h4>
                     <canvas id="wattaktuell" class="canvas" width="400" height="400"></canvas>
                 </div>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="info_box">
                     <h3 class="info_title">15 Min (kWh)</h3>
-                    <h6 class="info_text" id="min15"></h6>
+                    <h4 class="info_text" id="min15"></h4>
                     <canvas id="15minkWh" class="canvas" width="400" height="400"></canvas>
                 </div>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="info_box">
                     <h3 class="info_title">Stunde (kWh)</h3>
-                    <h6 class="info_text" id="hour"></h6>
+                    <h4 class="info_text" id="hour"></h4>
                     <canvas id="stundekWh" class="canvas" width="400" height="400"></canvas>
                 </div>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="info_box">
                     <h3 class="info_title">Tag (kWh)</h3>
-                    <h6 class="info_text" id="day"></h6>
+                    <h4 class="info_text" id="day"></h4>
                     <canvas id="tagkWh" class="canvas" width="400" height="400"></canvas>
                 </div>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="info_box">
                     <h3 class="info_title">Woche (kWh)</h3>
-                    <h6 class="info_text" id="week"></h6>
+                    <h4 class="info_text" id="week"></h4>
                     <canvas id="wochekWh" class="canvas" width="400" height="400"></canvas>
                 </div>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="info_box">
                     <h3 class="info_title">Monat (kWh)</h3>
-                    <h6 class="info_text" id="month"></h6>
+                    <h4 class="info_text" id="month"></h4>
                     <canvas id="monatkWh" class="canvas" width="400" height="400"></canvas>
                 </div>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="info_box">
                     <h3 class="info_title">Jahr (kWh)</h3>
-                    <h6 class="info_text" id="year"></h6>
+                    <h4 class="info_text" id="year"></h4>
                     <canvas id="jahrkWh" class="canvas" width="400" height="400"></canvas>
                 </div>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="info_box">
                     <h3 class="info_title">Gesamt (kWh)</h3>
-                    <h6 class="info_text" id="total"></h6>
+                    <h4 class="info_text" id="total"></h4>
                     <canvas id="gesamtkWh" class="canvas" width="400" height="400"></canvas>
                 </div>
             </div>
