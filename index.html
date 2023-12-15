@@ -129,7 +129,7 @@
 
         ws.onmessage = function(event) {
           const data = JSON.parse(event.data);
-          //console.log(event.data);
+          console.log(event.data);
 
           watt.textContent = data.watt;
           min15.textContent = data.min15;
@@ -158,6 +158,12 @@
     </script>
 
     <script>
+        ws.onmessage = function(event) {
+          const data = JSON.parse(event.data);
+          console.log('bottom data');
+          console.log(event.data);
+          watt.textContent = data.watt;
+        };
         var wattaktuelldata = {
             labels: ['Watt aktuell'],
             datasets: [{
