@@ -43,67 +43,67 @@
             </div>
             <div class="col-md-6">
                 <label for="LastUpdate" class="form_label">Last Update</label>
-                <div class="time_box"><span class="time_box_date">14-12-2023</span><span class="time_box_time">09:49:14</span><span class="time_box_zone">+01:00</span></div>
+                <div class="time_box"><span class="time_box_date" id="updated"></span></div>
             </div>
             <div class="col-md-3">
                 <label for="Status" class="form_label">Status</label>
-                <div class="status_box">verbunden<span class="status_round status_active"></span></div>
+                <div class="status_box"><span id="status"></span><span class="status_round status_active"></span></div>
             </div>
         </div>
         <div class="row mt-5">
             <div class="col-md-3 mb-4">
                 <div class="info_box">
                     <h3 class="info_title">Watt aktuell</h3>
-                    <h6 class="info_text">775</h6>
+                    <h6 class="info_text" id="watt"></h6>
                     <canvas id="wattaktuell" class="canvas" width="400" height="400"></canvas>
                 </div>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="info_box">
                     <h3 class="info_title">15 Min (kWh)</h3>
-                    <h6 class="info_text">0.7</h6>
+                    <h6 class="info_text" id="min15"></h6>
                     <canvas id="15minkWh" class="canvas" width="400" height="400"></canvas>
                 </div>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="info_box">
                     <h3 class="info_title">Stunde (kWh)</h3>
-                    <h6 class="info_text">0.7</h6>
+                    <h6 class="info_text" id="hour"></h6>
                     <canvas id="stundekWh" class="canvas" width="400" height="400"></canvas>
                 </div>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="info_box">
                     <h3 class="info_title">Tag (kWh)</h3>
-                    <h6 class="info_text">0.8</h6>
+                    <h6 class="info_text" id="day"></h6>
                     <canvas id="tagkWh" class="canvas" width="400" height="400"></canvas>
                 </div>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="info_box">
                     <h3 class="info_title">Woche (kWh)</h3>
-                    <h6 class="info_text">0.8</h6>
+                    <h6 class="info_text" id="week"></h6>
                     <canvas id="wochekWh" class="canvas" width="400" height="400"></canvas>
                 </div>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="info_box">
                     <h3 class="info_title">Monat (kWh)</h3>
-                    <h6 class="info_text">0.8</h6>
+                    <h6 class="info_text" id="month"></h6>
                     <canvas id="monatkWh" class="canvas" width="400" height="400"></canvas>
                 </div>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="info_box">
                     <h3 class="info_title">Jahr (kWh)</h3>
-                    <h6 class="info_text">0.8</h6>
+                    <h6 class="info_text" id="year"></h6>
                     <canvas id="jahrkWh" class="canvas" width="400" height="400"></canvas>
                 </div>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="info_box">
                     <h3 class="info_title">Gesamt (kWh)</h3>
-                    <h6 class="info_text">29.2</h6>
+                    <h6 class="info_text" id="total"></h6>
                     <canvas id="gesamtkWh" class="canvas" width="400" height="400"></canvas>
                 </div>
             </div>
@@ -153,7 +153,7 @@
 
     <script>
         var minkWhdata = {
-            labels: ['5 Min' , '10 Min', '15 Min' , '20 Min', '25 Min'],
+            labels: ['15 Min (kWh)'],
             datasets: [{
                 label: '15 Min (kWh)',
                 backgroundColor: '#ffffff',
@@ -161,7 +161,7 @@
                 color: '#ffffff',
                 barThickness: 15,
                 maxBarThickness: 15,
-                data: [ 0.4, 0.7, 0.9 , 0.7]
+                data: [ 0.7]
             }]
         };
         var minkWhconfig = {
@@ -192,23 +192,34 @@
         var stundekWhdata = {
             labels: ['Stunde (kWh)'],
             datasets: [{
-                data: [70, 30],
-                backgroundColor: [
-                    '#ffffff', // 80% fill color
-                    'rgba(255, 255, 255, 0.0)', // unfilled color
-                ],
-                borderColor: 'rgba(255, 255, 255, 0.0)',
-                hoverOffset: 4 // add some space on hover
+                label: 'Stunde (kWh)',
+                backgroundColor: '#ffffff',
+                borderColor: '#ffffff',
+                color: '#ffffff',
+                barThickness: 15,
+                maxBarThickness: 15,
+                data: [ 0.7]
             }]
         };
         var stundekWhconfig = {
-            type: 'doughnut',
+            type: 'bar',
             data: stundekWhdata,
             options: {
-                cutout: '80%',
                 color: [
                     '#ffffff', 
                 ],
+                scales: {
+                    y: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    }
+                },
             }
         };
         var stundekWh = new Chart(document.getElementById('stundekWh'), stundekWhconfig);
@@ -218,23 +229,34 @@
         var tagkWhdata = {
             labels: ['Tag (kWh)'],
             datasets: [{
-                data: [80, 20],
-                backgroundColor: [
-                    '#06D0FF', // 80% fill color
-                    'rgba(255, 255, 255, 0.0)', // unfilled color
-                ],
-                borderColor: 'rgba(255, 255, 255, 0.0)',
-                hoverOffset: 4 // add some space on hover
+                label: 'Tag (kWh)',
+                backgroundColor: '#ffffff',
+                borderColor: '#ffffff',
+                color: '#ffffff',
+                barThickness: 15,
+                maxBarThickness: 15,
+                data: [ 0.7]
             }]
         };
         var tagkWhconfig = {
-            type: 'doughnut',
+            type: 'bar',
             data: tagkWhdata,
             options: {
-                cutout: '80%',
                 color: [
                     '#ffffff', 
                 ],
+                scales: {
+                    y: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    }
+                },
             }
         };
         var tagkWh = new Chart(document.getElementById('tagkWh'), tagkWhconfig);
@@ -244,22 +266,34 @@
         var wochekWhdata = {
             labels: ['Woche (kWh)'],
             datasets: [{
-                data: [80, 20],
-                backgroundColor: [
-                    '#06D0FF', // 80% fill color
-                    'rgba(255, 255, 255, 0.0)', // unfilled color
-                ],
-                borderColor: 'rgba(255, 255, 255, 0.0)',
-                hoverOffset: 4 // add some space on hover
+                label: 'Woche (kWh)',
+                backgroundColor: '#ffffff',
+                borderColor: '#ffffff',
+                color: '#ffffff',
+                barThickness: 15,
+                maxBarThickness: 15,
+                data: [ 0.7]
             }]
         };
         var wochekWhconfig = {
-            type: 'pie',
+            type: 'bar',
             data: wochekWhdata,
             options: {
                 color: [
                     '#ffffff', 
                 ],
+                scales: {
+                    y: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    }
+                },
             }
         };
         var wochekWh = new Chart(document.getElementById('wochekWh'), wochekWhconfig);
@@ -267,24 +301,36 @@
 
     <script>
         var monatkWhdata = {
-            labels: ['Woche (kWh)'],
+            labels: ['Monat (kWh)'],
             datasets: [{
-                data: [80, 20],
-                backgroundColor: [
-                    '#FFFFFF', // 80% fill color
-                    'rgba(255, 255, 255, 0.0)', // unfilled color
-                ],
-                borderColor: 'rgba(255, 255, 255, 0.0)',
-                hoverOffset: 4 // add some space on hover
+                label: 'Monat (kWh)',
+                backgroundColor: '#ffffff',
+                borderColor: '#ffffff',
+                color: '#ffffff',
+                barThickness: 15,
+                maxBarThickness: 15,
+                data: [ 0.7]
             }]
         };
         var monatkWhconfig = {
-            type: 'pie',
+            type: 'bar',
             data: monatkWhdata,
             options: {
                 color: [
                     '#ffffff', 
                 ],
+                scales: {
+                    y: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    }
+                },
             }
         };
         var monatkWh = new Chart(document.getElementById('monatkWh'), monatkWhconfig);
@@ -292,25 +338,36 @@
 
     <script>
         var jahrkWhdata = {
-            labels: ['Tag (kWh)'],
+            labels: ['Jahr (kWh)'],
             datasets: [{
-                data: [80, 20],
-                backgroundColor: [
-                    '#06D0FF', // 80% fill color
-                    'rgba(255, 255, 255, 0.0)', // unfilled color
-                ],
-                borderColor: 'rgba(255, 255, 255, 0.0)',
-                hoverOffset: 4 // add some space on hover
+                label: 'Jahr (kWh)',
+                backgroundColor: '#ffffff',
+                borderColor: '#ffffff',
+                color: '#ffffff',
+                barThickness: 15,
+                maxBarThickness: 15,
+                data: [ 0.7]
             }]
         };
         var jahrkWhconfig = {
-            type: 'doughnut',
+            type: 'bar',
             data: jahrkWhdata,
             options: {
-                cutout: '80%',
                 color: [
                     '#ffffff', 
                 ],
+                scales: {
+                    y: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    }
+                },
             }
         };
         var jahrkWh = new Chart(document.getElementById('jahrkWh'), jahrkWhconfig);
@@ -318,7 +375,7 @@
 
     <script>
         var gesamtkWhdata = {
-            labels: ['5' , '10', '15' , '20', '25', '30'],
+            labels: ['Gesamt (kWh)'],
             datasets: [{
                 label: 'Gesamt (kWh)',
                 backgroundColor: '#ffffff',
@@ -326,11 +383,11 @@
                 color: '#ffffff',
                 barThickness: 15,
                 maxBarThickness: 15,
-                data: [ 5, 18, 29, 39, 24, 14]
+                data: [ 0.7]
             }]
         };
         var gesamtkWhconfig = {
-            type: 'line',
+            type: 'bar',
             data: gesamtkWhdata,
             options: {
                 color: [
@@ -351,6 +408,51 @@
             }
         };
         var gesamtkWh = new Chart(document.getElementById('gesamtkWh'), gesamtkWhconfig);
+    </script>
+
+    <script>
+      (function() {
+        const watt = document.getElementById('watt');
+        const min15 = document.getElementById('min15');
+        const hour = document.getElementById('hour');
+        const day = document.getElementById('day');
+        const week = document.getElementById('week');
+        const month = document.getElementById('month');
+        const year = document.getElementById('year');
+        const total = document.getElementById('total');
+        const updated = document.getElementById('updated');
+        const status = document.getElementById('status');
+
+        const ws = new WebSocket(`wss://${location.host}`);
+
+        ws.onmessage = function(event) {
+          const data = JSON.parse(event.data);
+          //console.log(event.data);
+
+          watt.textContent = data.watt;
+          min15.textContent = data.min15;
+          hour.textContent = data.hour;
+          day.textContent = data.day;
+          week.textContent = data.week;
+          month.textContent = data.month;
+          year.textContent = data.year;
+          total.textContent = data.total;
+          updated.textContent = data.updated;
+        };
+
+        ws.onclose = function(event) {
+          //console.log(event); // even.type = close
+          status.textContent = "Unterbrochen, bitte Seite neuladen";
+          // autotmatich reconnect in browser - Seite wird automatisch neu geladen
+          window.location.reload()
+        }
+
+        ws.onopen = function(event) {
+          //console.log(event); // event.type = open
+          status.textContent = "verbunden";
+        }
+
+      })();
     </script>
 
 </body>
