@@ -158,6 +158,7 @@
     </script>
 
     <script>
+        const ws = new WebSocket(`wss://${location.host}`);
         ws.onmessage = function(event) {
           const data = JSON.parse(event.data);
           console.log('bottom data');
