@@ -129,7 +129,7 @@
 
         ws.onmessage = function(event) {
           const data = JSON.parse(event.data);
-          console.log(event.data);
+          //console.log(event.data);
 
           watt.textContent = data.watt;
           min15.textContent = data.min15;
@@ -162,8 +162,9 @@
         ws.onmessage = function(event) {
           const data = JSON.parse(event.data);
           console.log('bottom data');
-          console.log(event.data);
-          watt.textContent = data.watt;
+          //console.log(event.data);
+          var datawatt = data.watt;
+          console.log(datawatt);
         };
         var wattaktuelldata = {
             labels: ['Watt aktuell'],
@@ -174,7 +175,7 @@
                 color: '#ffffff',
                 barThickness: 15,
                 maxBarThickness: 15,
-                data: [data.watt]
+                data: [datawatt]
             }]
         };
         var wattaktuellconfig = {
