@@ -158,8 +158,8 @@
     </script>
 
     <script>
-        const ws = new WebSocket(`wss://${location.host}`);
-        ws.onmessage = function(event) {
+        const ws1 = new WebSocket(`wss://${location.host}`);
+        ws1.onmessage = function(event) {
           const data = JSON.parse(event.data);
           //console.log('bottom data');
           //console.log(event.data);
@@ -204,8 +204,8 @@
     </script>
 
     <script>
-        const ws = new WebSocket(`wss://${location.host}`);
-        ws.onmessage = function(event) {
+        const ws2 = new WebSocket(`wss://${location.host}`);
+        ws2.onmessage = function(event) {
             const data = JSON.parse(event.data);
             //console.log('bottom data');
             //console.log(event.data);
@@ -245,12 +245,12 @@
                 }
             };
             var minkWh = new Chart(document.getElementById('15minkWh'), minkWhconfig);
-        }
+        };
     </script>
 
     <script>
-        const ws = new WebSocket(`wss://${location.host}`);
-        ws.onmessage = function(event) {
+        const ws3 = new WebSocket(`wss://${location.host}`);
+        ws3.onmessage = function(event) {
             const data = JSON.parse(event.data);
             //console.log('bottom data');
             //console.log(event.data);
@@ -290,12 +290,12 @@
                 }
             };
             var stundekWh = new Chart(document.getElementById('stundekWh'), stundekWhconfig);
-        }
+        };
     </script>
 
     <script>
-        const ws = new WebSocket(`wss://${location.host}`);
-        ws.onmessage = function(event) {
+        const ws4 = new WebSocket(`wss://${location.host}`);
+        ws4.onmessage = function(event) {
             const data = JSON.parse(event.data);
             //console.log('bottom data');
             //console.log(event.data);
@@ -335,12 +335,12 @@
                 }
             };
             var tagkWh = new Chart(document.getElementById('tagkWh'), tagkWhconfig);
-        }
+        };
     </script>
 
     <script>
-        const ws = new WebSocket(`wss://${location.host}`);
-        ws.onmessage = function(event) {
+        const ws5 = new WebSocket(`wss://${location.host}`);
+        ws5.onmessage = function(event) {
             const data = JSON.parse(event.data);
             //console.log('bottom data');
             //console.log(event.data);
@@ -380,12 +380,12 @@
                 }
             };
             var wochekWh = new Chart(document.getElementById('wochekWh'), wochekWhconfig);
-        }
+        };
     </script>
 
     <script>
-        const ws = new WebSocket(`wss://${location.host}`);
-        ws.onmessage = function(event) {
+        const ws6 = new WebSocket(`wss://${location.host}`);
+        ws6.onmessage = function(event) {
             const data = JSON.parse(event.data);
             //console.log('bottom data');
             //console.log(event.data);
@@ -425,12 +425,12 @@
                 }
             };
             var monatkWh = new Chart(document.getElementById('monatkWh'), monatkWhconfig);
-        }
+        };
     </script>
 
     <script>
-        const ws = new WebSocket(`wss://${location.host}`);
-        ws.onmessage = function(event) {
+        const ws7 = new WebSocket(`wss://${location.host}`);
+        ws7.onmessage = function(event) {
             const data = JSON.parse(event.data);
             //console.log('bottom data');
             //console.log(event.data);
@@ -470,12 +470,12 @@
                 }
             };
             var jahrkWh = new Chart(document.getElementById('jahrkWh'), jahrkWhconfig);
-        }
+        };
     </script>
 
     <script>
-        const ws = new WebSocket(`wss://${location.host}`);
-        ws.onmessage = function(event) {
+        const ws8 = new WebSocket(`wss://${location.host}`);
+        ws8.onmessage = function(event) {
             const data = JSON.parse(event.data);
             //console.log('bottom data');
             //console.log(event.data);
@@ -515,7 +515,7 @@
                 }
             };
             var gesamtkWh = new Chart(document.getElementById('gesamtkWh'), gesamtkWhconfig);
-        }
+        };
     </script>
 
     
