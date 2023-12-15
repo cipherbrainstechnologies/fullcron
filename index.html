@@ -115,302 +115,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
     <script>
-        var wattaktuelldata = {
-            labels: ['Watt aktuell'],
-            datasets: [{
-                label: 'Watt aktuell',
-                backgroundColor: '#ffffff',
-                borderColor: '#ffffff',
-                color: '#ffffff',
-                barThickness: 15,
-                maxBarThickness: 15,
-                data: [775]
-            }]
-        };
-        var wattaktuellconfig = {
-            type: 'bar',
-            data: wattaktuelldata,
-            options: {
-                color: [
-                    '#ffffff', 
-                ],
-                scales: {
-                    y: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    },
-                    x: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    }
-                },
-            }
-        };
-        var wattaktuell = new Chart(document.getElementById('wattaktuell'), wattaktuellconfig);
-    </script>
-
-    <script>
-        var minkWhdata = {
-            labels: ['15 Min (kWh)'],
-            datasets: [{
-                label: '15 Min (kWh)',
-                backgroundColor: '#ffffff',
-                borderColor: '#ffffff',
-                color: '#ffffff',
-                barThickness: 15,
-                maxBarThickness: 15,
-                data: [ 0.7]
-            }]
-        };
-        var minkWhconfig = {
-            type: 'bar',
-            data: minkWhdata,
-            options: {
-                color: [
-                    '#ffffff', 
-                ],
-                scales: {
-                    y: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    },
-                    x: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    }
-                },
-            }
-        };
-        var minkWh = new Chart(document.getElementById('15minkWh'), minkWhconfig);
-    </script>
-
-    <script>
-        var stundekWhdata = {
-            labels: ['Stunde (kWh)'],
-            datasets: [{
-                label: 'Stunde (kWh)',
-                backgroundColor: '#ffffff',
-                borderColor: '#ffffff',
-                color: '#ffffff',
-                barThickness: 15,
-                maxBarThickness: 15,
-                data: [ 0.7]
-            }]
-        };
-        var stundekWhconfig = {
-            type: 'bar',
-            data: stundekWhdata,
-            options: {
-                color: [
-                    '#ffffff', 
-                ],
-                scales: {
-                    y: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    },
-                    x: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    }
-                },
-            }
-        };
-        var stundekWh = new Chart(document.getElementById('stundekWh'), stundekWhconfig);
-    </script>
-
-    <script>
-        var tagkWhdata = {
-            labels: ['Tag (kWh)'],
-            datasets: [{
-                label: 'Tag (kWh)',
-                backgroundColor: '#ffffff',
-                borderColor: '#ffffff',
-                color: '#ffffff',
-                barThickness: 15,
-                maxBarThickness: 15,
-                data: [ 0.7]
-            }]
-        };
-        var tagkWhconfig = {
-            type: 'bar',
-            data: tagkWhdata,
-            options: {
-                color: [
-                    '#ffffff', 
-                ],
-                scales: {
-                    y: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    },
-                    x: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    }
-                },
-            }
-        };
-        var tagkWh = new Chart(document.getElementById('tagkWh'), tagkWhconfig);
-    </script>
-
-    <script>
-        var wochekWhdata = {
-            labels: ['Woche (kWh)'],
-            datasets: [{
-                label: 'Woche (kWh)',
-                backgroundColor: '#ffffff',
-                borderColor: '#ffffff',
-                color: '#ffffff',
-                barThickness: 15,
-                maxBarThickness: 15,
-                data: [ 0.7]
-            }]
-        };
-        var wochekWhconfig = {
-            type: 'bar',
-            data: wochekWhdata,
-            options: {
-                color: [
-                    '#ffffff', 
-                ],
-                scales: {
-                    y: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    },
-                    x: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    }
-                },
-            }
-        };
-        var wochekWh = new Chart(document.getElementById('wochekWh'), wochekWhconfig);
-    </script>
-
-    <script>
-        var monatkWhdata = {
-            labels: ['Monat (kWh)'],
-            datasets: [{
-                label: 'Monat (kWh)',
-                backgroundColor: '#ffffff',
-                borderColor: '#ffffff',
-                color: '#ffffff',
-                barThickness: 15,
-                maxBarThickness: 15,
-                data: [ 0.7]
-            }]
-        };
-        var monatkWhconfig = {
-            type: 'bar',
-            data: monatkWhdata,
-            options: {
-                color: [
-                    '#ffffff', 
-                ],
-                scales: {
-                    y: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    },
-                    x: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    }
-                },
-            }
-        };
-        var monatkWh = new Chart(document.getElementById('monatkWh'), monatkWhconfig);
-    </script>
-
-    <script>
-        var jahrkWhdata = {
-            labels: ['Jahr (kWh)'],
-            datasets: [{
-                label: 'Jahr (kWh)',
-                backgroundColor: '#ffffff',
-                borderColor: '#ffffff',
-                color: '#ffffff',
-                barThickness: 15,
-                maxBarThickness: 15,
-                data: [ 0.7]
-            }]
-        };
-        var jahrkWhconfig = {
-            type: 'bar',
-            data: jahrkWhdata,
-            options: {
-                color: [
-                    '#ffffff', 
-                ],
-                scales: {
-                    y: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    },
-                    x: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    }
-                },
-            }
-        };
-        var jahrkWh = new Chart(document.getElementById('jahrkWh'), jahrkWhconfig);
-    </script>
-
-    <script>
-        var gesamtkWhdata = {
-            labels: ['Gesamt (kWh)'],
-            datasets: [{
-                label: 'Gesamt (kWh)',
-                backgroundColor: '#ffffff',
-                borderColor: '#ffffff',
-                color: '#ffffff',
-                barThickness: 15,
-                maxBarThickness: 15,
-                data: [ 0.7]
-            }]
-        };
-        var gesamtkWhconfig = {
-            type: 'bar',
-            data: gesamtkWhdata,
-            options: {
-                color: [
-                    '#ffffff', 
-                ],
-                scales: {
-                    y: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    },
-                    x: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    }
-                },
-            }
-        };
-        var gesamtkWh = new Chart(document.getElementById('gesamtkWh'), gesamtkWhconfig);
-    </script>
-
-    <script>
       (function() {
         const watt = document.getElementById('watt');
         const min15 = document.getElementById('min15');
@@ -454,6 +158,304 @@
 
       })();
     </script>
+
+    <script>
+        var wattaktuelldata = {
+            labels: ['Watt aktuell'],
+            datasets: [{
+                label: 'Watt aktuell',
+                backgroundColor: '#ffffff',
+                borderColor: '#ffffff',
+                color: '#ffffff',
+                barThickness: 15,
+                maxBarThickness: 15,
+                data: [data.watt]
+            }]
+        };
+        var wattaktuellconfig = {
+            type: 'bar',
+            data: wattaktuelldata,
+            options: {
+                color: [
+                    '#ffffff', 
+                ],
+                scales: {
+                    y: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    }
+                },
+            }
+        };
+        var wattaktuell = new Chart(document.getElementById('wattaktuell'), wattaktuellconfig);
+    </script>
+
+    <script>
+        var minkWhdata = {
+            labels: ['15 Min (kWh)'],
+            datasets: [{
+                label: '15 Min (kWh)',
+                backgroundColor: '#ffffff',
+                borderColor: '#ffffff',
+                color: '#ffffff',
+                barThickness: 15,
+                maxBarThickness: 15,
+                data: [ data.min15]
+            }]
+        };
+        var minkWhconfig = {
+            type: 'bar',
+            data: minkWhdata,
+            options: {
+                color: [
+                    '#ffffff', 
+                ],
+                scales: {
+                    y: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    }
+                },
+            }
+        };
+        var minkWh = new Chart(document.getElementById('15minkWh'), minkWhconfig);
+    </script>
+
+    <script>
+        var stundekWhdata = {
+            labels: ['Stunde (kWh)'],
+            datasets: [{
+                label: 'Stunde (kWh)',
+                backgroundColor: '#ffffff',
+                borderColor: '#ffffff',
+                color: '#ffffff',
+                barThickness: 15,
+                maxBarThickness: 15,
+                data: [ data.hour]
+            }]
+        };
+        var stundekWhconfig = {
+            type: 'bar',
+            data: stundekWhdata,
+            options: {
+                color: [
+                    '#ffffff', 
+                ],
+                scales: {
+                    y: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    }
+                },
+            }
+        };
+        var stundekWh = new Chart(document.getElementById('stundekWh'), stundekWhconfig);
+    </script>
+
+    <script>
+        var tagkWhdata = {
+            labels: ['Tag (kWh)'],
+            datasets: [{
+                label: 'Tag (kWh)',
+                backgroundColor: '#ffffff',
+                borderColor: '#ffffff',
+                color: '#ffffff',
+                barThickness: 15,
+                maxBarThickness: 15,
+                data: [ data.day ]
+            }]
+        };
+        var tagkWhconfig = {
+            type: 'bar',
+            data: tagkWhdata,
+            options: {
+                color: [
+                    '#ffffff', 
+                ],
+                scales: {
+                    y: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    }
+                },
+            }
+        };
+        var tagkWh = new Chart(document.getElementById('tagkWh'), tagkWhconfig);
+    </script>
+
+    <script>
+        var wochekWhdata = {
+            labels: ['Woche (kWh)'],
+            datasets: [{
+                label: 'Woche (kWh)',
+                backgroundColor: '#ffffff',
+                borderColor: '#ffffff',
+                color: '#ffffff',
+                barThickness: 15,
+                maxBarThickness: 15,
+                data: [ data.week]
+            }]
+        };
+        var wochekWhconfig = {
+            type: 'bar',
+            data: wochekWhdata,
+            options: {
+                color: [
+                    '#ffffff', 
+                ],
+                scales: {
+                    y: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    }
+                },
+            }
+        };
+        var wochekWh = new Chart(document.getElementById('wochekWh'), wochekWhconfig);
+    </script>
+
+    <script>
+        var monatkWhdata = {
+            labels: ['Monat (kWh)'],
+            datasets: [{
+                label: 'Monat (kWh)',
+                backgroundColor: '#ffffff',
+                borderColor: '#ffffff',
+                color: '#ffffff',
+                barThickness: 15,
+                maxBarThickness: 15,
+                data: [ data.month]
+            }]
+        };
+        var monatkWhconfig = {
+            type: 'bar',
+            data: monatkWhdata,
+            options: {
+                color: [
+                    '#ffffff', 
+                ],
+                scales: {
+                    y: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    }
+                },
+            }
+        };
+        var monatkWh = new Chart(document.getElementById('monatkWh'), monatkWhconfig);
+    </script>
+
+    <script>
+        var jahrkWhdata = {
+            labels: ['Jahr (kWh)'],
+            datasets: [{
+                label: 'Jahr (kWh)',
+                backgroundColor: '#ffffff',
+                borderColor: '#ffffff',
+                color: '#ffffff',
+                barThickness: 15,
+                maxBarThickness: 15,
+                data: [ data.year]
+            }]
+        };
+        var jahrkWhconfig = {
+            type: 'bar',
+            data: jahrkWhdata,
+            options: {
+                color: [
+                    '#ffffff', 
+                ],
+                scales: {
+                    y: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    }
+                },
+            }
+        };
+        var jahrkWh = new Chart(document.getElementById('jahrkWh'), jahrkWhconfig);
+    </script>
+
+    <script>
+        var gesamtkWhdata = {
+            labels: ['Gesamt (kWh)'],
+            datasets: [{
+                label: 'Gesamt (kWh)',
+                backgroundColor: '#ffffff',
+                borderColor: '#ffffff',
+                color: '#ffffff',
+                barThickness: 15,
+                maxBarThickness: 15,
+                data: [ data.total]
+            }]
+        };
+        var gesamtkWhconfig = {
+            type: 'bar',
+            data: gesamtkWhdata,
+            options: {
+                color: [
+                    '#ffffff', 
+                ],
+                scales: {
+                    y: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color : '#ffffff'
+                        }
+                    }
+                },
+            }
+        };
+        var gesamtkWh = new Chart(document.getElementById('gesamtkWh'), gesamtkWhconfig);
+    </script>
+
+    
 
 </body>
 </html>
