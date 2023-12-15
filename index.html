@@ -161,10 +161,10 @@
         const ws = new WebSocket(`wss://${location.host}`);
         ws.onmessage = function(event) {
           const data = JSON.parse(event.data);
-          console.log('bottom data');
+          //console.log('bottom data');
           //console.log(event.data);
           var datawatt = data.watt;
-          console.log(datawatt);
+          //console.log(datawatt);
           var wattaktuelldata = {
             labels: ['Watt aktuell'],
             datasets: [{
@@ -204,262 +204,318 @@
     </script>
 
     <script>
-        var minkWhdata = {
-            labels: ['15 Min (kWh)'],
-            datasets: [{
-                label: '15 Min (kWh)',
-                backgroundColor: '#ffffff',
-                borderColor: '#ffffff',
-                color: '#ffffff',
-                barThickness: 15,
-                maxBarThickness: 15,
-                data: [ data.min15]
-            }]
-        };
-        var minkWhconfig = {
-            type: 'bar',
-            data: minkWhdata,
-            options: {
-                color: [
-                    '#ffffff', 
-                ],
-                scales: {
-                    y: {
-                        ticks: {
-                            color : '#ffffff'
+        const ws = new WebSocket(`wss://${location.host}`);
+        ws.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+            //console.log('bottom data');
+            //console.log(event.data);
+            var datamin15 = data.min15;
+            //console.log(datawatt);
+            var minkWhdata = {
+                labels: ['15 Min (kWh)'],
+                datasets: [{
+                    label: '15 Min (kWh)',
+                    backgroundColor: '#ffffff',
+                    borderColor: '#ffffff',
+                    color: '#ffffff',
+                    barThickness: 15,
+                    maxBarThickness: 15,
+                    data: [datamin15]
+                }]
+            };
+            var minkWhconfig = {
+                type: 'bar',
+                data: minkWhdata,
+                options: {
+                    color: [
+                        '#ffffff', 
+                    ],
+                    scales: {
+                        y: {
+                            ticks: {
+                                color : '#ffffff'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color : '#ffffff'
+                            }
                         }
                     },
-                    x: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    }
-                },
-            }
-        };
-        var minkWh = new Chart(document.getElementById('15minkWh'), minkWhconfig);
+                }
+            };
+            var minkWh = new Chart(document.getElementById('15minkWh'), minkWhconfig);
+        }
     </script>
 
     <script>
-        var stundekWhdata = {
-            labels: ['Stunde (kWh)'],
-            datasets: [{
-                label: 'Stunde (kWh)',
-                backgroundColor: '#ffffff',
-                borderColor: '#ffffff',
-                color: '#ffffff',
-                barThickness: 15,
-                maxBarThickness: 15,
-                data: [ data.hour]
-            }]
-        };
-        var stundekWhconfig = {
-            type: 'bar',
-            data: stundekWhdata,
-            options: {
-                color: [
-                    '#ffffff', 
-                ],
-                scales: {
-                    y: {
-                        ticks: {
-                            color : '#ffffff'
+        const ws = new WebSocket(`wss://${location.host}`);
+        ws.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+            //console.log('bottom data');
+            //console.log(event.data);
+            var datahour = data.hour;
+            //console.log(datawatt);
+            var stundekWhdata = {
+                labels: ['Stunde (kWh)'],
+                datasets: [{
+                    label: 'Stunde (kWh)',
+                    backgroundColor: '#ffffff',
+                    borderColor: '#ffffff',
+                    color: '#ffffff',
+                    barThickness: 15,
+                    maxBarThickness: 15,
+                    data: [datahour]
+                }]
+            };
+            var stundekWhconfig = {
+                type: 'bar',
+                data: stundekWhdata,
+                options: {
+                    color: [
+                        '#ffffff', 
+                    ],
+                    scales: {
+                        y: {
+                            ticks: {
+                                color : '#ffffff'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color : '#ffffff'
+                            }
                         }
                     },
-                    x: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    }
-                },
-            }
-        };
-        var stundekWh = new Chart(document.getElementById('stundekWh'), stundekWhconfig);
+                }
+            };
+            var stundekWh = new Chart(document.getElementById('stundekWh'), stundekWhconfig);
+        }
     </script>
 
     <script>
-        var tagkWhdata = {
-            labels: ['Tag (kWh)'],
-            datasets: [{
-                label: 'Tag (kWh)',
-                backgroundColor: '#ffffff',
-                borderColor: '#ffffff',
-                color: '#ffffff',
-                barThickness: 15,
-                maxBarThickness: 15,
-                data: [ data.day ]
-            }]
-        };
-        var tagkWhconfig = {
-            type: 'bar',
-            data: tagkWhdata,
-            options: {
-                color: [
-                    '#ffffff', 
-                ],
-                scales: {
-                    y: {
-                        ticks: {
-                            color : '#ffffff'
+        const ws = new WebSocket(`wss://${location.host}`);
+        ws.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+            //console.log('bottom data');
+            //console.log(event.data);
+            var dataday = data.day;
+            //console.log(datawatt);
+            var tagkWhdata = {
+                labels: ['Tag (kWh)'],
+                datasets: [{
+                    label: 'Tag (kWh)',
+                    backgroundColor: '#ffffff',
+                    borderColor: '#ffffff',
+                    color: '#ffffff',
+                    barThickness: 15,
+                    maxBarThickness: 15,
+                    data: [dataday]
+                }]
+            };
+            var tagkWhconfig = {
+                type: 'bar',
+                data: tagkWhdata,
+                options: {
+                    color: [
+                        '#ffffff', 
+                    ],
+                    scales: {
+                        y: {
+                            ticks: {
+                                color : '#ffffff'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color : '#ffffff'
+                            }
                         }
                     },
-                    x: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    }
-                },
-            }
-        };
-        var tagkWh = new Chart(document.getElementById('tagkWh'), tagkWhconfig);
+                }
+            };
+            var tagkWh = new Chart(document.getElementById('tagkWh'), tagkWhconfig);
+        }
     </script>
 
     <script>
-        var wochekWhdata = {
-            labels: ['Woche (kWh)'],
-            datasets: [{
-                label: 'Woche (kWh)',
-                backgroundColor: '#ffffff',
-                borderColor: '#ffffff',
-                color: '#ffffff',
-                barThickness: 15,
-                maxBarThickness: 15,
-                data: [ data.week]
-            }]
-        };
-        var wochekWhconfig = {
-            type: 'bar',
-            data: wochekWhdata,
-            options: {
-                color: [
-                    '#ffffff', 
-                ],
-                scales: {
-                    y: {
-                        ticks: {
-                            color : '#ffffff'
+        const ws = new WebSocket(`wss://${location.host}`);
+        ws.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+            //console.log('bottom data');
+            //console.log(event.data);
+            var dataweek = data.week;
+            //console.log(datawatt);
+            var wochekWhdata = {
+                labels: ['Woche (kWh)'],
+                datasets: [{
+                    label: 'Woche (kWh)',
+                    backgroundColor: '#ffffff',
+                    borderColor: '#ffffff',
+                    color: '#ffffff',
+                    barThickness: 15,
+                    maxBarThickness: 15,
+                    data: [dataweek]
+                }]
+            };
+            var wochekWhconfig = {
+                type: 'bar',
+                data: wochekWhdata,
+                options: {
+                    color: [
+                        '#ffffff', 
+                    ],
+                    scales: {
+                        y: {
+                            ticks: {
+                                color : '#ffffff'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color : '#ffffff'
+                            }
                         }
                     },
-                    x: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    }
-                },
-            }
-        };
-        var wochekWh = new Chart(document.getElementById('wochekWh'), wochekWhconfig);
+                }
+            };
+            var wochekWh = new Chart(document.getElementById('wochekWh'), wochekWhconfig);
+        }
     </script>
 
     <script>
-        var monatkWhdata = {
-            labels: ['Monat (kWh)'],
-            datasets: [{
-                label: 'Monat (kWh)',
-                backgroundColor: '#ffffff',
-                borderColor: '#ffffff',
-                color: '#ffffff',
-                barThickness: 15,
-                maxBarThickness: 15,
-                data: [ data.month]
-            }]
-        };
-        var monatkWhconfig = {
-            type: 'bar',
-            data: monatkWhdata,
-            options: {
-                color: [
-                    '#ffffff', 
-                ],
-                scales: {
-                    y: {
-                        ticks: {
-                            color : '#ffffff'
+        const ws = new WebSocket(`wss://${location.host}`);
+        ws.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+            //console.log('bottom data');
+            //console.log(event.data);
+            var datamonth = data.month;
+            //console.log(datawatt);
+            var monatkWhdata = {
+                labels: ['Monat (kWh)'],
+                datasets: [{
+                    label: 'Monat (kWh)',
+                    backgroundColor: '#ffffff',
+                    borderColor: '#ffffff',
+                    color: '#ffffff',
+                    barThickness: 15,
+                    maxBarThickness: 15,
+                    data: [datamonth]
+                }]
+            };
+            var monatkWhconfig = {
+                type: 'bar',
+                data: monatkWhdata,
+                options: {
+                    color: [
+                        '#ffffff', 
+                    ],
+                    scales: {
+                        y: {
+                            ticks: {
+                                color : '#ffffff'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color : '#ffffff'
+                            }
                         }
                     },
-                    x: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    }
-                },
-            }
-        };
-        var monatkWh = new Chart(document.getElementById('monatkWh'), monatkWhconfig);
+                }
+            };
+            var monatkWh = new Chart(document.getElementById('monatkWh'), monatkWhconfig);
+        }
     </script>
 
     <script>
-        var jahrkWhdata = {
-            labels: ['Jahr (kWh)'],
-            datasets: [{
-                label: 'Jahr (kWh)',
-                backgroundColor: '#ffffff',
-                borderColor: '#ffffff',
-                color: '#ffffff',
-                barThickness: 15,
-                maxBarThickness: 15,
-                data: [ data.year]
-            }]
-        };
-        var jahrkWhconfig = {
-            type: 'bar',
-            data: jahrkWhdata,
-            options: {
-                color: [
-                    '#ffffff', 
-                ],
-                scales: {
-                    y: {
-                        ticks: {
-                            color : '#ffffff'
+        const ws = new WebSocket(`wss://${location.host}`);
+        ws.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+            //console.log('bottom data');
+            //console.log(event.data);
+            var datayear = data.year;
+            //console.log(datawatt);
+            var jahrkWhdata = {
+                labels: ['Jahr (kWh)'],
+                datasets: [{
+                    label: 'Jahr (kWh)',
+                    backgroundColor: '#ffffff',
+                    borderColor: '#ffffff',
+                    color: '#ffffff',
+                    barThickness: 15,
+                    maxBarThickness: 15,
+                    data: [datayear]
+                }]
+            };
+            var jahrkWhconfig = {
+                type: 'bar',
+                data: jahrkWhdata,
+                options: {
+                    color: [
+                        '#ffffff', 
+                    ],
+                    scales: {
+                        y: {
+                            ticks: {
+                                color : '#ffffff'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color : '#ffffff'
+                            }
                         }
                     },
-                    x: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    }
-                },
-            }
-        };
-        var jahrkWh = new Chart(document.getElementById('jahrkWh'), jahrkWhconfig);
+                }
+            };
+            var jahrkWh = new Chart(document.getElementById('jahrkWh'), jahrkWhconfig);
+        }
     </script>
 
     <script>
-        var gesamtkWhdata = {
-            labels: ['Gesamt (kWh)'],
-            datasets: [{
-                label: 'Gesamt (kWh)',
-                backgroundColor: '#ffffff',
-                borderColor: '#ffffff',
-                color: '#ffffff',
-                barThickness: 15,
-                maxBarThickness: 15,
-                data: [ data.total]
-            }]
-        };
-        var gesamtkWhconfig = {
-            type: 'bar',
-            data: gesamtkWhdata,
-            options: {
-                color: [
-                    '#ffffff', 
-                ],
-                scales: {
-                    y: {
-                        ticks: {
-                            color : '#ffffff'
+        const ws = new WebSocket(`wss://${location.host}`);
+        ws.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+            //console.log('bottom data');
+            //console.log(event.data);
+            var datatotal = data.total;
+            //console.log(datawatt);
+            var gesamtkWhdata = {
+                labels: ['Gesamt (kWh)'],
+                datasets: [{
+                    label: 'Gesamt (kWh)',
+                    backgroundColor: '#ffffff',
+                    borderColor: '#ffffff',
+                    color: '#ffffff',
+                    barThickness: 15,
+                    maxBarThickness: 15,
+                    data: [datatotal]
+                }]
+            };
+            var gesamtkWhconfig = {
+                type: 'bar',
+                data: gesamtkWhdata,
+                options: {
+                    color: [
+                        '#ffffff', 
+                    ],
+                    scales: {
+                        y: {
+                            ticks: {
+                                color : '#ffffff'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color : '#ffffff'
+                            }
                         }
                     },
-                    x: {
-                        ticks: {
-                            color : '#ffffff'
-                        }
-                    }
-                },
-            }
-        };
-        var gesamtkWh = new Chart(document.getElementById('gesamtkWh'), gesamtkWhconfig);
+                }
+            };
+            var gesamtkWh = new Chart(document.getElementById('gesamtkWh'), gesamtkWhconfig);
+        }
     </script>
 
     
